@@ -1,11 +1,11 @@
 package org.tj.springcloud.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
+import org.tj.springcloud.web.service.UserService;
 
 /**
  * Created by tangjing on 2019/2/27.
@@ -14,15 +14,11 @@ import org.springframework.web.client.RestTemplate;
 public class DcController {
 
     @Autowired
-    LoadBalancerClient loadBalancerClient;
-    @Autowired
-    RestTemplate restTemplate;
+    UserService userService;
 
-    @GetMapping("/consumer")
-    public String dc() {
-        ServiceInstance serviceInstance = loadBalancerClient.choose("eureka-client");
-        String url = "http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/dc";
-        System.out.println(url);
-        return restTemplate.getForObject(url, String.class);
+    @RequestMapping(value = "/hi", method = RequestMethod.GET)
+    public String sayHi(@RequestParam String name) {
+        return userService.getUserInfo(name);
     }
+
 }

@@ -5,22 +5,22 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.tj.springcloud</groupId>
-    <artifactId>Spring-Feign-User</artifactId>
+    <artifactId>Spring-Service-User</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
 
 
     <properties>
-        <feign.version>1.3.5.RELEASE</feign.version>
+
         <eureka-server.version>1.3.5.RELEASE</eureka-server.version>
         <starter-web.version>1.3.5.RELEASE</starter-web.version>
     </properties>
 
-
     <parent>
-        <groupId>org.tj.springcloud.parent</groupId>
-        <artifactId>Spring-Parent</artifactId>
-        <version>0.0.1</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.4.RELEASE</version>
+        <relativePath/>
     </parent>
 
     <dependencies>
@@ -36,11 +36,21 @@
             <version>${starter-web.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-feign</artifactId>
-            <version>${feign.version}</version>
-        </dependency>
+
     </dependencies>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Dalston.SR1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 
 </project>
