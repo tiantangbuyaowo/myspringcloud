@@ -17,10 +17,9 @@
     </properties>
 
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.4.RELEASE</version>
-        <relativePath/>
+        <groupId>org.tj.springcloud.parent</groupId>
+        <artifactId>Spring-Parent</artifactId>
+        <version>0.0.1</version>
     </parent>
 
     <dependencies>
