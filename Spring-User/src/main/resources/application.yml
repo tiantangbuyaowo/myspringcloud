@@ -15,3 +15,6 @@ eureka:
 mybatis:
   type-aliases-package: org.tj.springcloud.user.model
   mapper-locations: mappers/*.xml
+logging:
+  level:
+    org.tj.springcloud.user.mapper: debug
