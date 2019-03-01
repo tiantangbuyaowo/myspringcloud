@@ -13,7 +13,7 @@ eureka:
     service-url:
       defaultZone: http://localhost:1001/eureka
 mybatis:
-  type-aliases-package: org.tj.springcloud.user.model
+  type-aliases-package: org.tj.springcloud.common.model
   mapper-locations: mappers/*.xml
 logging:
   level:

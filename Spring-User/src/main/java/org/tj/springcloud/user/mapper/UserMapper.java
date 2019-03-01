@@ -1,6 +1,7 @@
 package org.tj.springcloud.user.mapper;
 
-import org.tj.springcloud.user.model.User;
+
+import org.tj.springcloud.common.model.userservice.User;
 
 /**
  * @author tangjing
