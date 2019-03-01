@@ -8,9 +8,6 @@
     <artifactId>Spring-Parent</artifactId>
     <version>0.0.1</version>
     <packaging>pom</packaging>
-    <modules>
-        <module>Spring-Eureka</module>
-    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
