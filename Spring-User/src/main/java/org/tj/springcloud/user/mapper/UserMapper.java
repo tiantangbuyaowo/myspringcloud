@@ -11,4 +11,6 @@ import org.tj.springcloud.common.model.userservice.User;
 public interface UserMapper {
 
     public User selectUser(User user);
+
+    void addUser(User user);
 }
