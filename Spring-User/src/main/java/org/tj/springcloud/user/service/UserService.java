@@ -28,8 +28,12 @@ public class UserService {
         userMapper.addUser(user);
     }
 
-
+    @Transactional
     public User selectUser(User user) {
+        User u = new User();
+        u.setId(13);
+        userMapper.addUser(u);
+        int i = 10 / 0;
         return userMapper.selectUser(user);
     }
 }

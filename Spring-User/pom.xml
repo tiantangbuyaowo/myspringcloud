@@ -9,14 +9,7 @@
     <version>0.0.1</version>
     <packaging>jar</packaging>
 
-
     <properties>
-
-        <eureka-server.version>2.0.1.RELEASE</eureka-server.version>
-        <starter-web.version>2.0.1.RELEASE</starter-web.version>
-        <springboot.version>2.0.4.RELEASE</springboot.version>
-        <mysql.conntctor.version>5.1.42</mysql.conntctor.version>
-        <mybatis.spring.boot.version>2.0.0</mybatis.spring.boot.version>
     </properties>
 
     <parent>
@@ -30,33 +23,32 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>${starter-web.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-            <version>${eureka-server.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
-            <version>${springboot.version}</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql.conntctor.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>${mybatis.spring.boot.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
 
+        </dependency>
     </dependencies>
 
 
