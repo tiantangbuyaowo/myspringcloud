@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Spring-Common/Spring-Common.iml" filepath="$PROJECT_DIR$/Spring-Common/Spring-Common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Eureka/Spring-Eureka.iml" filepath="$PROJECT_DIR$/Spring-Eureka/Spring-Eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Goods/Spring-Goods.iml" filepath="$PROJECT_DIR$/Spring-Goods/Spring-Goods.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Parent/Spring-Parent.iml" filepath="$PROJECT_DIR$/Spring-Parent/Spring-Parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-ProxyZuul/Spring-ProxyZuul.iml" filepath="$PROJECT_DIR$/Spring-ProxyZuul/Spring-ProxyZuul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-User/Spring-User.iml" filepath="$PROJECT_DIR$/Spring-User/Spring-User.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Web/Spring-Web.iml" filepath="$PROJECT_DIR$/Spring-Web/Spring-Web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/myspringcloud.iml" filepath="$PROJECT_DIR$/.idea/myspringcloud.iml" />
+    </modules>
+  </component>
+</project>
