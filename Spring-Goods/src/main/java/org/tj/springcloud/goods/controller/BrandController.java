@@ -3,6 +3,7 @@ package org.tj.springcloud.goods.controller;
 import cn.hutool.db.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.tj.springcloud.common.exception.CloudException;
@@ -35,7 +36,7 @@ public class BrandController {
      * @创建时间 20:49
      */
     @RequestMapping("/list")
-    public HttpResult list(TbBrandPage page) {
+    public HttpResult list(@RequestBody TbBrandPage page) {
         try {
             PageInfo<TbBrand> pageInfo = brandService.findBrandListForPage(page);
             return HttpResult.OK().data(pageInfo);
