@@ -16,7 +16,11 @@
             parameterType="TbBrandPage">
         SELECT
         <include refid="Base_Data_Select"/>
-        FROM tb_brand ORDER BY ID
+        FROM tb_brand WHERE 1 = 1
+        <if test="null != name and '' != name">
+            AND NAME  LIKE CONCAT('%',#{name},'%')
+        </if>
+        ORDER BY ID
 
     </select>
 
