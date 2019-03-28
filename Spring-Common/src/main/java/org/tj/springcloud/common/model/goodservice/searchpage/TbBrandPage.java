@@ -10,4 +10,6 @@ import org.tj.springcloud.common.model.base.Page;
  */
 @Data
 public class TbBrandPage extends Page {
+
+    private String name;
 }
