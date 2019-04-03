@@ -15,6 +15,10 @@ eureka:
 mybatis:
   type-aliases-package: org.tj.springcloud.common.model
   mapper-locations: mappers/*.xml
+shop:
+  worker:
+    workerId: 1
+    dataCenterId: 1
 logging:
   level:
     org.tj.springcloud.user.mapper: debug

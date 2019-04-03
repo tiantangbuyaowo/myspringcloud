@@ -14,4 +14,14 @@ import java.util.List;
 public interface BrandService {
 
     PageInfo<TbBrand> findBrandListForPage(TbBrandPage page);
+
+    /**
+     * @描述
+     * @参数 添加商品分类
+     * @返回值
+     * @创建人 tangjing
+     * @创建日期 2019/4/3
+     * @创建时间 22:50
+     */
+    void addNewTbrand(TbBrand tbBrand);
 }

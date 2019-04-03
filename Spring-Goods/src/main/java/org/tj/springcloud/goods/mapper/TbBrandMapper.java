@@ -20,4 +20,14 @@ public interface TbBrandMapper {
      * @创建时间 21:03
      */
     List<TbBrand> findBrandListForPage(TbBrandPage page);
+
+    /**
+     * @描述
+     * @参数 添加新的商品分类
+     * @返回值
+     * @创建人 tangjing
+     * @创建日期 2019/4/3
+     * @创建时间 22:52
+     */
+    void addNewTbrand(TbBrand tbBrand);
 }
