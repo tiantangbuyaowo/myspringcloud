@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.tj.springcloud.web</groupId>
-    <artifactId>Spring-Web</artifactId>
+    <artifactId>Spring-Order</artifactId>
     <version>0.0.1</version>
 
     <properties>
