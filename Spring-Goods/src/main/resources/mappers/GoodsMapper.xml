@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.tj.springcloud.goods.mapper.CategoryMapper">
+
+    <sql id="Base_Data_Select">
+
+        ID as id ,
+        TITLE as title ,
+        DESC as desc ,
+        STOCK as stock
+    </sql>
+
+
+    <!-- 查询所有商品 -->
+
+    <select id="findGoodsList" resultType="Goods">
+        SELECT
+        <include refid="Base_Data_Select"/>
+        FROM tb_goods  ORDER BY id
+    </select>
+
+
+    <insert id="addNewGood" parameterType="Goods">
+        INSERT INTO
+
+    </insert>
+
+</mapper>

@@ -10,7 +10,9 @@ import org.tj.springcloud.common.model.goodservice.Goods;
 import org.tj.springcloud.common.model.goodservice.TbBrand;
 import org.tj.springcloud.common.model.goodservice.searchpage.TbBrandPage;
 import org.tj.springcloud.common.util.HttpResult;
+import org.tj.springcloud.goods.service.GoodsService;
 
+import javax.annotation.Resource;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -21,6 +23,12 @@ import java.util.concurrent.TimeUnit;
 @RestController
 @RequestMapping("/goods")
 public class GoodsController {
+
+    /**
+     * 商品数据服务
+     */
+    @Resource
+    private GoodsService goodsService;
 
 
     /**
@@ -34,15 +42,15 @@ public class GoodsController {
     @RequestMapping("/list")
     public HttpResult list() {
         try {
-            TimeUnit.MILLISECONDS.sleep( 3000 );
+            TimeUnit.MILLISECONDS.sleep(3000);
             //PageInfo<TbBrand> pageInfo = brandService.findBrandListForPage( page );
-            return HttpResult.OK().data( "ok" );
+            return HttpResult.OK().data("ok");
         } catch (Exception e) {
             e.printStackTrace();
             if (e instanceof CloudException) {
-                return HttpResult.ERROR( e.getMessage() );
+                return HttpResult.ERROR(e.getMessage());
             }
-            return HttpResult.ERROR( e.getMessage() );
+            return HttpResult.ERROR(e.getMessage());
         }
     }
 
@@ -50,14 +58,14 @@ public class GoodsController {
     @PostMapping
     public HttpResult addNewGood(@RequestBody Goods goods) {
         try {
-            //PageInfo<TbBrand> pageInfo = brandService.findBrandListForPage( page );
-            return HttpResult.OK().data( "ok" );
+            goodsService.addNewGood(goods);
+            return HttpResult.OK();
         } catch (Exception e) {
             e.printStackTrace();
             if (e instanceof CloudException) {
-                return HttpResult.ERROR( e.getMessage() );
+                return HttpResult.ERROR(e.getMessage());
             }
-            return HttpResult.ERROR( e.getMessage() );
+            return HttpResult.ERROR(e.getMessage());
         }
     }
 
