@@ -10,9 +10,18 @@ import org.tj.springcloud.common.model.base.BaseModel;
 @Data
 public class Goods extends BaseModel {
 
-
+    /**
+     * 标题
+     */
     private String title;
 
+    /**
+     * 描述
+     */
     private String desc;
 
+    /**
+     * 库存
+     */
+    private int stock;
 }
