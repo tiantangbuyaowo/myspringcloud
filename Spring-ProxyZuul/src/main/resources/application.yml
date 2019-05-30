@@ -1,5 +1,6 @@
 server:
   port: 10010
+  connection-timeout: 5000
 spring:
   application:
     name: api-proxy
@@ -8,6 +9,8 @@ eureka:
     service-url:
       defaultZone: http://127.0.0.1:1001/eureka
     registry-fetch-interval-seconds: 5
+    eureka-server-read-timeout-seconds: 5
+
   instance:
     prefer-ip-address: true
     ip-address: 127.0.0.1
@@ -16,13 +19,18 @@ zuul:
   routes:
     goods-service: /goods/**
   add-host-header: true
+  host:
+    connect-timeout-millis: 15000
+    socket-timeout-millis: 60000
 hystrix:
   command:
     default:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 7000
+            RimeoutInMilliseconds: 5000
+
 ribbon:
-  connetTimeout: 500
-  readTimeout: 5000
+  ConnetTimeout: 5000
+  ReadTimeout: 5000
+
