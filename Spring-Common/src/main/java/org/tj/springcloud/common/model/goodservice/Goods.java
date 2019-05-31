@@ -25,5 +25,5 @@ public class Goods extends BaseModel {
     /**
      * 库存
      */
-    private int stock;
+    private Integer stock;
 }
