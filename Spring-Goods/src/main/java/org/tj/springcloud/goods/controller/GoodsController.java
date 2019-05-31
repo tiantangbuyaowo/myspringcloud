@@ -55,7 +55,7 @@ public class GoodsController {
     }
 
 
-    @PostMapping
+    @PostMapping("/goods")
     public HttpResult addNewGood(@RequestBody Goods goods) {
         try {
             goodsService.addNewGood(goods);
