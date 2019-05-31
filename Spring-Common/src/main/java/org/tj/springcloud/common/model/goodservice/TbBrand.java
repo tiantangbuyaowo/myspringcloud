@@ -1,6 +1,7 @@
 package org.tj.springcloud.common.model.goodservice;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.tj.springcloud.common.model.base.BaseModel;
 
 /**
@@ -9,6 +10,7 @@ import org.tj.springcloud.common.model.base.BaseModel;
  * @date 2019/3/21.
  */
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class TbBrand extends BaseModel {
     /**
      * 品牌名称

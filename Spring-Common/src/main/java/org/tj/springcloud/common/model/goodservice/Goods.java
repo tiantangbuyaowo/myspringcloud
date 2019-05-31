@@ -1,6 +1,7 @@
 package org.tj.springcloud.common.model.goodservice;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.tj.springcloud.common.model.base.BaseModel;
 
 /**
@@ -8,6 +9,7 @@ import org.tj.springcloud.common.model.base.BaseModel;
  * Created by tangjing on 2019/5/30.
  */
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class Goods extends BaseModel {
 
     /**
