@@ -25,4 +25,6 @@ public interface GoodsMapper {
      * @param goods
      */
     void addNewGood(Goods goods);
+
+    void decreaseStock(Goods goods);
 }

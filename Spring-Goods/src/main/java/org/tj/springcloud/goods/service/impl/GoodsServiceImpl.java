@@ -26,4 +26,9 @@ public class GoodsServiceImpl implements GoodsService {
         goods.setId(idWorker.nextId()+"");
         goodsMapper.addNewGood(goods);
     }
+
+    @Override
+    public void decreaseStock(Goods goods) {
+        goodsMapper.decreaseStock(goods);
+    }
 }

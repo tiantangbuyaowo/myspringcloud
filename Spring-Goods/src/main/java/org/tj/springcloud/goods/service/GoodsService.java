@@ -8,4 +8,6 @@ import org.tj.springcloud.common.model.goodservice.Goods;
 public interface GoodsService {
 
     public void addNewGood(Goods goods);
+
+    void decreaseStock(Goods goods);
 }

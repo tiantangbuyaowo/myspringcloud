@@ -13,6 +13,7 @@ import org.tj.springcloud.common.util.HttpResult;
 import org.tj.springcloud.goods.service.GoodsService;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -67,6 +68,23 @@ public class GoodsController {
             }
             return HttpResult.ERROR(e.getMessage());
         }
+    }
+
+
+    @RequestMapping("stock/decrease")
+    public HttpResult reduceStock(@RequestBody List<Goods> goodsList){
+       /* try {
+            goodsService.decreaseStock(goods);
+            return HttpResult.OK();
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (e instanceof CloudException) {
+                return HttpResult.ERROR(e.getMessage());
+            }
+            return HttpResult.ERROR(e.getMessage());
+        }*/
+        System.out.println("成功调取服务");
+        return HttpResult.OK();
     }
 
 
