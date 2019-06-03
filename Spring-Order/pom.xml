@@ -57,6 +57,21 @@
             <version>${Spring.Goods.Interface.version}</version>
         </dependency>
 
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+
+        </dependency>
+
+        <!--引入这个包才能使用fegin-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-core</artifactId>
+     
+        </dependency>
+
+
     </dependencies>
 
 </project>
