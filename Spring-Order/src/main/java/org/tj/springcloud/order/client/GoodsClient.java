@@ -1,6 +1,7 @@
 package org.tj.springcloud.order.client;
 
-import org.springframework.cloud.netflix.feign.FeignClient;
+
+import org.springframework.cloud.openfeign.FeignClient;
 import org.tj.springcloud.goods.api.GoodsApi;
 
 /**

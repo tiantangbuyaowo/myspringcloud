@@ -14,12 +14,12 @@ import java.util.ArrayList;
 @Service("orderService")
 public class OrderServiceImpl implements OrderService {
 
-   // @Resource
-   // private GoodsClient goodsClient;
+    @Resource
+    private GoodsClient goodsClient;
 
     @Override
     public void createOrder(String goodid) {
-       // goodsClient.decreaseStock( new ArrayList<Goods>() );
+        goodsClient.decreaseStock( new ArrayList<Goods>() );
         System.out.printf( "123" );
     }
 }
