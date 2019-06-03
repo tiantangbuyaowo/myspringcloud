@@ -11,6 +11,9 @@
     <properties>
         <starter-web.version>1.3.5.RELEASE</starter-web.version>
         <feign.version>1.3.5.RELEASE</feign.version>
+        <spring.cloud.netflix.core.version>1.3.5.RELEASE</spring.cloud.netflix.core.version>
+        <spring.cloud.commons.version>1.2.4.RELEASE</spring.cloud.commons.version>
+        <Spring.Goods.Interface.version>0.0.1</Spring.Goods.Interface.version>
     </properties>
     <parent>
         <groupId>org.tj.springcloud.parent</groupId>
@@ -31,7 +34,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-commons</artifactId>
-            <version>1.2.4.RELEASE</version>
+            <version>${spring.cloud.commons.version}</version>
         </dependency>
 
         <dependency>
@@ -39,5 +42,18 @@
             <artifactId>spring-cloud-starter-feign</artifactId>
             <version>${feign.version}</version>
         </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-core</artifactId>
+            <version>${spring.cloud.netflix.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.tj.springcloud.goods.interface</groupId>
+            <artifactId>Spring-Goods-Interface</artifactId>
+            <version>${Spring.Goods.Interface.version}</version>
+        </dependency>
+
     </dependencies>
 </project>
