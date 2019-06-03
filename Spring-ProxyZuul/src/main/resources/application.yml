@@ -18,6 +18,7 @@ zuul:
   prefix: /api
   routes:
     goods-service: /goods/**
+    orders-service: /orders/**
   add-host-header: true
   host:
     connect-timeout-millis: 15000
