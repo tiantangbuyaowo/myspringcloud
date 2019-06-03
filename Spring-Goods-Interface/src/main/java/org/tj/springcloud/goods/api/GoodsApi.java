@@ -17,6 +17,6 @@ public interface GoodsApi {
      *
      * @param goodsList
      */
-    @PostMapping("stock/decrease")
+    @PostMapping("goods/stock/decrease")
     void decreaseStock(@RequestBody List<Goods> goodsList);
 }
