@@ -1,5 +1,6 @@
 package org.tj.springcloud.order.controller;
 
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.tj.springcloud.common.exception.CloudException;
@@ -13,13 +14,14 @@ import java.util.concurrent.TimeUnit;
  * Created by tangjing on 2019/6/3.
  */
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/orders")
 public class OrderController {
 
 
     @Resource
     private OrderService orderService;
 
+    @PostMapping("/order")
     public HttpResult createOrder(String goodid) {
         try {
             orderService.createOrder(goodid);

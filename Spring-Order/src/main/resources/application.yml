@@ -7,7 +7,7 @@ spring:
     username: root
     password: 123
 server:
-  port: 2001
+  port: 3001
 eureka:
   client:
     service-url:
