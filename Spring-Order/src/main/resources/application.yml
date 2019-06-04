@@ -22,3 +22,6 @@ shop:
 logging:
   level:
     org.tj.springcloud.user.mapper: debug
+feign:
+  hystrix:
+    enabled: true

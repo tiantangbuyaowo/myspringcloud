@@ -14,7 +14,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableEurekaClient
 @SpringBootApplication
 @EnableFeignClients
-@MapperScan("org.tj.springcloud.goods.mapper")
+@MapperScan("org.tj.springcloud.order.mapper")
 public class Application {
 
     public static void main(String[] args) {
