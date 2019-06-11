@@ -2,6 +2,7 @@ package org.tj.springcloud.goods.service.impl;
 
 import org.springframework.stereotype.Service;
 import org.tj.springcloud.common.model.goodservice.Goods;
+import org.tj.springcloud.common.model.goodservice.vo.StockVo;
 import org.tj.springcloud.common.util.IdWorker;
 import org.tj.springcloud.goods.mapper.GoodsMapper;
 import org.tj.springcloud.goods.service.GoodsService;
@@ -28,8 +29,8 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
-    public void decreaseStock(Goods goods) {
-        goodsMapper.decreaseStock(goods);
+    public int decreaseStock(StockVo stockVo) {
+       return goodsMapper.decreaseStock(stockVo);
     }
 
     @Override

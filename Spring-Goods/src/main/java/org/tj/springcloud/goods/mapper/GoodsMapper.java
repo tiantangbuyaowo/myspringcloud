@@ -1,6 +1,7 @@
 package org.tj.springcloud.goods.mapper;
 
 import org.tj.springcloud.common.model.goodservice.Goods;
+import org.tj.springcloud.common.model.goodservice.vo.StockVo;
 
 import java.util.List;
 
@@ -26,7 +27,7 @@ public interface GoodsMapper {
      */
     void addNewGood(Goods goods);
 
-    void decreaseStock(Goods goods);
+    int decreaseStock(StockVo stockVo);
 
     Goods findGoodsById(String id);
 }

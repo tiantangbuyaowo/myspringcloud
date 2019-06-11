@@ -4,7 +4,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.tj.springcloud.common.model.goodservice.Goods;
+import org.tj.springcloud.common.model.goodservice.vo.StockVo;
+import org.tj.springcloud.common.util.HttpResult;
 
 import javax.websocket.server.PathParam;
 import java.util.List;
@@ -18,10 +21,10 @@ public interface GoodsApi {
     /**
      * 减库存
      *
-     * @param goodsList
+     * @param stockVo
      */
     @PostMapping("stock/decrease")
-    void decreaseStock(@RequestBody List<Goods> goodsList);
+    HttpResult decreaseStock(@RequestBody StockVo stockVo);
 
 
     /**
@@ -29,6 +32,6 @@ public interface GoodsApi {
      *
      * @param id
      */
-    @GetMapping("{id}")
+    @GetMapping("good/{id}")
     Goods findGoodInfo(@PathVariable("id") String id);
 }

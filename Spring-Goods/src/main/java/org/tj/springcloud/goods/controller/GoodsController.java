@@ -6,11 +6,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.tj.springcloud.common.exception.CloudException;
 import org.tj.springcloud.common.model.goodservice.Goods;
 import org.tj.springcloud.common.model.goodservice.TbBrand;
 import org.tj.springcloud.common.model.goodservice.searchpage.TbBrandPage;
+import org.tj.springcloud.common.model.goodservice.vo.StockVo;
 import org.tj.springcloud.common.util.HttpResult;
 import org.tj.springcloud.goods.service.GoodsService;
 
@@ -73,11 +75,26 @@ public class GoodsController {
     }
 
 
-    @GetMapping("/{id}")
-    public HttpResult findGoodInfo(@PathVariable("id") String id) {
+    @GetMapping("/good/{id}")
+    public Goods  findGoodInfo(@PathVariable("id") String id) {
         try {
 
-            return HttpResult.OK().data( goodsService.findGoodsById( id ) );
+            return  goodsService.findGoodsById( id ) ;
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (e instanceof CloudException) {
+                return null;
+            }
+            return null;
+        }
+    }
+
+
+    @RequestMapping("stock/decrease")
+    public HttpResult reduceStock(@RequestBody StockVo stockVo) {
+        try {
+            int count = goodsService.decreaseStock( stockVo );
+            return HttpResult.OK().data( count );
         } catch (Exception e) {
             e.printStackTrace();
             if (e instanceof CloudException) {
@@ -85,23 +102,7 @@ public class GoodsController {
             }
             return HttpResult.ERROR( e.getMessage() );
         }
-    }
 
-
-    @RequestMapping("stock/decrease")
-    public HttpResult reduceStock(@RequestBody List<Goods> goodsList) {
-       /* try {
-            goodsService.decreaseStock(goods);
-            return HttpResult.OK();
-        } catch (Exception e) {
-            e.printStackTrace();
-            if (e instanceof CloudException) {
-                return HttpResult.ERROR(e.getMessage());
-            }
-            return HttpResult.ERROR(e.getMessage());
-        }*/
-        System.out.println( "成功调取服务" );
-        return HttpResult.OK();
     }
 
 

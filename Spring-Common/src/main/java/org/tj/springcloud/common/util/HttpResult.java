@@ -58,7 +58,7 @@ public class HttpResult {
     public static HttpResult ERROR()
 
     {
-        return ERROR(UNKNOWERROR, FAIL_MSG);
+        return ERROR( UNKNOWERROR, FAIL_MSG );
     }
 
     /**
@@ -72,7 +72,7 @@ public class HttpResult {
     public static HttpResult ERROR(String msg)
 
     {
-        return ERROR(UNKNOWERROR, msg);
+        return ERROR( UNKNOWERROR, msg );
     }
 
     /**
@@ -91,5 +91,10 @@ public class HttpResult {
         result.msg = msg;
         return result;
     }
+
+    public boolean isSuccess() {
+        return this.code == SUCCESS;
+    }
+
 
 }

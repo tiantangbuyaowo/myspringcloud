@@ -61,5 +61,10 @@
         WHERE ID = #{id}
     </select>
 
+    <!--更新商品库存 -->
+    <update id="decreaseStock" parameterType="StockVo">
+        UPDATE tb_goods SET stock = #{newStock} WHERE ID = #{id} AND stock = #{oldStock}
+
+    </update>
 
 </mapper>

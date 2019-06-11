@@ -23,10 +23,7 @@ public class OrderController {
     @PostMapping("/order")
     public HttpResult createOrder(String goodid) {
         try {
-
-            //检查库存
-
-            orderService.createOrder(goodid);
+            orderService.createOrder( goodid );
             return HttpResult.OK().data( "ok" );
         } catch (Exception e) {
             e.printStackTrace();
