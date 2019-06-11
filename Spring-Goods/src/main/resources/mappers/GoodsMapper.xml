@@ -8,7 +8,7 @@
 
         ID as id ,
         TITLE as title ,
-        DESC as desc ,
+        `DESC` as `desc` ,
         STOCK as stock
     </sql>
 
@@ -50,5 +50,16 @@
         )
 
     </insert>
+
+
+    <!-- 查询单个商品信息 -->
+    <select id="findGoodsById" resultType="Goods"
+            parameterType="String">
+        SELECT
+        <include refid="Base_Data_Select"/>
+        FROM tb_goods
+        WHERE ID = #{id}
+    </select>
+
 
 </mapper>

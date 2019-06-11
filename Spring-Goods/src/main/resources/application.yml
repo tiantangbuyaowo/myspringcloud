@@ -21,4 +21,4 @@ shop:
     dataCenterId: 1
 logging:
   level:
-    org.tj.springcloud.user.mapper: debug
+    org.tj.springcloud.goods.mapper: debug

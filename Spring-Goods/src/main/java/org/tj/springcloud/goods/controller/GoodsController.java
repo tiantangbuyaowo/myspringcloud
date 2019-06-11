@@ -1,6 +1,8 @@
 package org.tj.springcloud.goods.controller;
 
 import com.github.pagehelper.PageInfo;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +15,7 @@ import org.tj.springcloud.common.util.HttpResult;
 import org.tj.springcloud.goods.service.GoodsService;
 
 import javax.annotation.Resource;
+import javax.websocket.server.PathParam;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -22,7 +25,6 @@ import java.util.concurrent.TimeUnit;
  * @date 2019/3/11.
  */
 @RestController
-@RequestMapping("/goods")
 public class GoodsController {
 
     /**
@@ -43,15 +45,15 @@ public class GoodsController {
     @RequestMapping("/list")
     public HttpResult list() {
         try {
-            TimeUnit.MILLISECONDS.sleep(3000);
+            TimeUnit.MILLISECONDS.sleep( 3000 );
             //PageInfo<TbBrand> pageInfo = brandService.findBrandListForPage( page );
-            return HttpResult.OK().data("ok");
+            return HttpResult.OK().data( "ok" );
         } catch (Exception e) {
             e.printStackTrace();
             if (e instanceof CloudException) {
-                return HttpResult.ERROR(e.getMessage());
+                return HttpResult.ERROR( e.getMessage() );
             }
-            return HttpResult.ERROR(e.getMessage());
+            return HttpResult.ERROR( e.getMessage() );
         }
     }
 
@@ -59,20 +61,35 @@ public class GoodsController {
     @PostMapping("/goods")
     public HttpResult addNewGood(@RequestBody Goods goods) {
         try {
-            goodsService.addNewGood(goods);
+            goodsService.addNewGood( goods );
             return HttpResult.OK();
         } catch (Exception e) {
             e.printStackTrace();
             if (e instanceof CloudException) {
-                return HttpResult.ERROR(e.getMessage());
+                return HttpResult.ERROR( e.getMessage() );
             }
-            return HttpResult.ERROR(e.getMessage());
+            return HttpResult.ERROR( e.getMessage() );
+        }
+    }
+
+
+    @GetMapping("/{id}")
+    public HttpResult findGoodInfo(@PathVariable("id") String id) {
+        try {
+
+            return HttpResult.OK().data( goodsService.findGoodsById( id ) );
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (e instanceof CloudException) {
+                return HttpResult.ERROR( e.getMessage() );
+            }
+            return HttpResult.ERROR( e.getMessage() );
         }
     }
 
 
     @RequestMapping("stock/decrease")
-    public HttpResult reduceStock(@RequestBody List<Goods> goodsList){
+    public HttpResult reduceStock(@RequestBody List<Goods> goodsList) {
        /* try {
             goodsService.decreaseStock(goods);
             return HttpResult.OK();
@@ -83,7 +100,7 @@ public class GoodsController {
             }
             return HttpResult.ERROR(e.getMessage());
         }*/
-        System.out.println("成功调取服务");
+        System.out.println( "成功调取服务" );
         return HttpResult.OK();
     }
 

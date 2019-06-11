@@ -14,7 +14,6 @@ import java.util.concurrent.TimeUnit;
  * Created by tangjing on 2019/6/3.
  */
 @RestController
-@RequestMapping("/orders")
 public class OrderController {
 
 
@@ -24,6 +23,9 @@ public class OrderController {
     @PostMapping("/order")
     public HttpResult createOrder(String goodid) {
         try {
+
+            //检查库存
+
             orderService.createOrder(goodid);
             return HttpResult.OK().data( "ok" );
         } catch (Exception e) {

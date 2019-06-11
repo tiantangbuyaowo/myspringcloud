@@ -10,4 +10,6 @@ public interface GoodsService {
     public void addNewGood(Goods goods);
 
     void decreaseStock(Goods goods);
+
+    Goods findGoodsById(String id);
 }

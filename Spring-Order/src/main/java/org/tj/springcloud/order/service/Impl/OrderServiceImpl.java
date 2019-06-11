@@ -7,6 +7,7 @@ import org.tj.springcloud.order.service.OrderService;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by tangjing on 2019/6/3.
@@ -19,7 +20,15 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void createOrder(String goodid) {
-        goodsClient.decreaseStock( new ArrayList<Goods>() );
+
+        Goods goods = goodsClient.findGoodInfo( goodid );
+        if (goods.getStock() > 0) { //有库存
+         List<Goods> goodsList =   new ArrayList<Goods>();
+            goodsList.add( goods );
+           // goodsClient.decreaseStock(  );
+        }
+
+
         System.out.printf( "123" );
     }
 }

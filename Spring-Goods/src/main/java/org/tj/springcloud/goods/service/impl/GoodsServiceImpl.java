@@ -31,4 +31,9 @@ public class GoodsServiceImpl implements GoodsService {
     public void decreaseStock(Goods goods) {
         goodsMapper.decreaseStock(goods);
     }
+
+    @Override
+    public Goods findGoodsById(String id) {
+        return goodsMapper.findGoodsById(id);
+    }
 }
