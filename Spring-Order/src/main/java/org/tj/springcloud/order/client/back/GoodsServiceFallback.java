@@ -19,13 +19,14 @@ import java.util.List;
 public class GoodsServiceFallback implements GoodsClient {
     @Override
     public HttpResult decreaseStock(@RequestBody StockVo stockVo) {
-       // System.out.println( "调用扣减库存接口失败，对其进行降级处理！" );
+        // System.out.println( "调用扣减库存接口失败，对其进行降级处理！" );
         return HttpResult.ERROR();
     }
 
     @Override
     public Goods findGoodInfo(@PathVariable("id") String id) {
-       // System.out.println( "调用查找接口失败，对其进行降级处理！" );
-        return null;
+        // System.out.println( "调用查找接口失败，对其进行降级处理！" );
+
+        return new Goods();
     }
 }
