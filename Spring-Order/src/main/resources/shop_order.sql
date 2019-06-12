@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2019-06-03 14:14:34
+Date: 2019-06-12 11:12:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -31,10 +31,10 @@ CREATE TABLE `tb_order` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for tb_shop_items
+-- Table structure for tb_order_items
 -- ----------------------------
-DROP TABLE IF EXISTS `tb_shop_items`;
-CREATE TABLE `tb_shop_items` (
+DROP TABLE IF EXISTS `tb_order_items`;
+CREATE TABLE `tb_order_items` (
   `id` varchar(255) NOT NULL,
   `orderid` varchar(255) NOT NULL,
   `goodid` varchar(255) DEFAULT NULL,
@@ -44,5 +44,5 @@ CREATE TABLE `tb_shop_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of tb_shop_items
+-- Records of tb_order_items
 -- ----------------------------
