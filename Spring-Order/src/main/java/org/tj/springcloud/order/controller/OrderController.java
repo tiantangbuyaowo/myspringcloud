@@ -26,7 +26,8 @@ public class OrderController {
             orderService.createOrder( goodid );
             return HttpResult.OK().data( "ok" );
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            System.out.println( e.getMessage() );
             if (e instanceof CloudException) {
                 return HttpResult.ERROR( e.getMessage() );
             }

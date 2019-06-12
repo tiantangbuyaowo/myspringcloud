@@ -24,18 +24,18 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void createOrder(String goodid) {
-
-        Goods goods = goodsClient.findGoodInfo( goodid );
-        if (null != goods && goods.getStock() > 0) { //有库存
-            StockVo vo = new StockVo( goodid, goods.getStock(), goods.getStock() - 1 );
-          HttpResult  result = goodsClient.decreaseStock( vo );
-            if (result.isSuccess() && 1 == ((Integer) result.getData())) { //库存扣减成功
-                System.out.printf( "扣减成功，还剩" + vo.getNewStock() + "个商品" );
+        synchronized (this) {
+            Goods goods = goodsClient.findGoodInfo( goodid );
+            if (null != goods && goods.getStock() > 0) { //有库存
+                StockVo vo = new StockVo( goodid, goods.getStock(), goods.getStock() - 1 );
+                HttpResult result = goodsClient.decreaseStock( vo );
+                if (result.isSuccess() && 1 == ((Integer) result.getData())) { //库存扣减成功
+                    System.out.println( "扣减成功，还剩" + vo.getNewStock() + "个商品" );
+                }
+            } else {
+                throw new CloudException( "无库存商品" );
             }
-        } else {
-            throw new CloudException( "");
         }
-
 
     }
 }
