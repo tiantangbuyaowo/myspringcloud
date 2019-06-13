@@ -92,7 +92,7 @@ public class HttpResult {
         return result;
     }
 
-    public boolean isSuccess() {
+    public boolean success() {
         return this.code == SUCCESS;
     }
 

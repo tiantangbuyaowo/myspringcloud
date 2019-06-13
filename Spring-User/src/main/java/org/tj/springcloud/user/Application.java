@@ -12,7 +12,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @EnableEurekaClient
 @SpringBootApplication
-@MapperScan("org.tj.springcloud.user.mapper")
+@MapperScan("org.tj.springcloud.user.mappers")
 public class Application {
 
     public static void main(String[] args) {

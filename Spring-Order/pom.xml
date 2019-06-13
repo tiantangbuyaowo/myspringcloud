@@ -10,6 +10,7 @@
 
     <properties>
         <Spring.Goods.Interface.version>0.0.1</Spring.Goods.Interface.version>
+        <txlcn-tc.version>5.0.2.RELEASE</txlcn-tc.version>
     </properties>
     <parent>
         <groupId>org.tj.springcloud.parent</groupId>
@@ -73,7 +74,20 @@
         <dependency>
             <groupId>com.netflix.hystrix</groupId>
             <artifactId>hystrix-core</artifactId>
-            <version>1.5.12</version>
+        </dependency>
+
+
+        <!-- tx-lcn -->
+        <dependency>
+            <groupId>com.codingapi.txlcn</groupId>
+            <artifactId>txlcn-tc</artifactId>
+            <version>${txlcn-tc.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.codingapi.txlcn</groupId>
+            <artifactId>txlcn-txmsg-netty</artifactId>
+            <version>${txlcn-tc.version}</version>
         </dependency>
 
 

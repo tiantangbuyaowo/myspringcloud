@@ -32,6 +32,7 @@
         <commons-lang3.version>3.4</commons-lang3.version>
         <spring.cloud.starter.feign.version>1.4.7.RELEASE</spring.cloud.starter.feign.version>
         <spring.cloud.netflix.core.version>2.1.1.RELEASE</spring.cloud.netflix.core.version>
+        <hystrix-core.version>1.5.12</hystrix-core.version>
     </properties>
 
     <dependencies>
@@ -107,6 +108,13 @@
                 <artifactId>spring-cloud-netflix-core</artifactId>
                 <version>${spring.cloud.netflix.core.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.netflix.hystrix</groupId>
+                <artifactId>hystrix-core</artifactId>
+                <version>${hystrix-core.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
     <build>

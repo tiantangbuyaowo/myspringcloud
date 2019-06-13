@@ -1,5 +1,6 @@
 package org.tj.springcloud.order.service.Impl;
 
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.tj.springcloud.common.exception.CloudException;
@@ -37,7 +38,7 @@ public class OrderServiceImpl implements OrderService {
     @Resource
     private IdWorker idWorker;
 
-    @Transactional
+    @LcnTransaction //分布式事务注解
     @Override
     public void createOrder(String goodid) {
         synchronized (this) {
@@ -47,7 +48,7 @@ public class OrderServiceImpl implements OrderService {
             } else if (null != goods && goods.getStock() > 0) { //有库存
                 StockVo vo = new StockVo( goodid, goods.getStock(), goods.getStock() - 1 );
                 HttpResult result = goodsClient.decreaseStock( vo );
-                if (result.isSuccess() && 1 == ((Integer) result.getData())) { //库存扣减成功
+                if (result.success() && 1 == ((Integer) result.getData())) { //库存扣减成功
                     System.out.println( "扣减成功，还剩" + vo.getNewStock() + "个商品" );
                     //生成新的订单
                     Order order = new Order();

@@ -1,5 +1,6 @@
 package org.tj.springcloud.order;
 
+import com.codingapi.txlcn.tc.config.EnableDistributedTransaction;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,6 +15,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableEurekaClient
 @SpringBootApplication
 @EnableFeignClients
+@EnableDistributedTransaction
 @MapperScan("org.tj.springcloud.order.mapper")
 public class Application {
 

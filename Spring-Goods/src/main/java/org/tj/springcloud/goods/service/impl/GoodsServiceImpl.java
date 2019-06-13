@@ -1,6 +1,10 @@
 package org.tj.springcloud.goods.service.impl;
 
+import com.codingapi.txlcn.tc.annotation.DTXPropagation;
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
+import com.codingapi.txlcn.tc.annotation.TxcTransaction;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.tj.springcloud.common.model.goodservice.Goods;
 import org.tj.springcloud.common.model.goodservice.vo.StockVo;
 import org.tj.springcloud.common.util.IdWorker;
@@ -28,6 +32,9 @@ public class GoodsServiceImpl implements GoodsService {
         goodsMapper.addNewGood(goods);
     }
 
+    //@TxcTransaction(propagation = DTXPropagation.SUPPORTS)
+    @LcnTransaction //分布式事务注解
+    @Transactional  //本地事务注解
     @Override
     public int decreaseStock(StockVo stockVo) {
        return goodsMapper.decreaseStock(stockVo);
