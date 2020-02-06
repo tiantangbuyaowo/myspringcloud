@@ -7,6 +7,16 @@
     <groupId>org.tj.springcloud.parent</groupId>
     <artifactId>Spring-Parent</artifactId>
     <version>0.0.1</version>
+    <modules>
+        <module>Spring-Service</module>
+        <module>Spring-Service-Api</module>
+        <module>Spring-GetWay</module>
+        <module>Spring-Eureka</module>
+        <module>Spring-Common</module>
+        <module>Spring-Common-db</module>
+
+
+    </modules>
     <packaging>pom</packaging>
 
     <parent>
@@ -41,11 +51,7 @@
             <artifactId>commons-lang3</artifactId>
             <version>${commons-lang3.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.tj.springcloud.common</groupId>
-            <artifactId>Spring-Common</artifactId>
-            <version>0.0.1</version>
-        </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -89,6 +95,8 @@
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis.spring.boot.version}</version>
             </dependency>
+
+
             <!-- 分页助手启动器 -->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
@@ -117,12 +125,5 @@
 
         </dependencies>
     </dependencyManagement>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+
 </project>
