@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.tj.springcloud.goods.mapper.GoodsMapper">
+
+    <sql id="Base_Data_Select">
+
+        ID as id ,
+        TITLE as title ,
+        `DESC` as `desc` ,
+        STOCK as stock
+    </sql>
+
+
+    <!-- 查询所有商品 -->
+
+    <select id="findGoodsList" resultType="Goods">
+        SELECT
+        <include refid="Base_Data_Select"/>
+        FROM tb_goods ORDER BY id
+    </select>
+
+
+    <insert id="addNewGood" parameterType="Goods">
+        INSERT INTO tb_goods(
+        ID
+
+        <if test="title != null  and title != '' ">
+            ,TITLE
+        </if>
+        <if test="desc != null  ">
+            ,`DESC`
+        </if>
+        <if test="stock != null  ">
+            ,STOCK
+        </if>
+        )VALUES(
+        #{id}
+
+        <if test="title != null  and title != '' ">
+            ,#{title}
+        </if>
+        <if test="desc != null  ">
+            ,#{desc}
+        </if>
+        <if test="stock != null  ">
+            ,#{stock}
+        </if>
+        )
+
+    </insert>
+
+
+    <!-- 查询单个商品信息 -->
+    <select id="findGoodsById" resultType="Goods"
+            parameterType="String">
+        SELECT
+        <include refid="Base_Data_Select"/>
+        FROM tb_goods
+        WHERE ID = #{id}
+    </select>
+
+    <!--更新商品库存 -->
+    <update id="decreaseStock" parameterType="StockVo">
+        UPDATE tb_goods SET stock = #{newStock} WHERE ID = #{id} AND stock = #{oldStock}
+
+    </update>
+
+</mapper>

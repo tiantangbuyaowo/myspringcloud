@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.tj.springcloud.order.mapper.OrderItemMapper">
+
+    <sql id="Base_Data_Select">
+
+        ID as id ,
+        ORDERID as orderid ,
+        GOODID as goodid ,
+        GOODTITLE as goodtitle ,
+        GOODDESC as gooddesc ,
+
+    </sql>
+
+    <!-- 插入记录 -->
+    <insert id="addNewOrderItems" parameterType="java.util.List">
+        INSERT INTO
+        tb_order_items(ID,ORDERID,GOODID,GOODTITLE,GOODDESC )VALUES
+        <foreach collection="list" item="list" index="index"
+                 separator=",">
+            (#{list.id},#{list.orderid},#{list.goodid},#{list.goodtitle},#{list.gooddesc})
+        </foreach>
+
+    </insert>
+
+
+</mapper>

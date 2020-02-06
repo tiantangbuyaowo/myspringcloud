@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>Spring-Parent</artifactId>
+        <groupId>org.tj.springcloud.parent</groupId>
+        <version>0.0.1</version>
+    </parent>
+    <packaging>pom</packaging>
+    <modelVersion>4.0.0</modelVersion>
+
+    <modules>
+        <module>Spring-Service-Goods-Api</module>
+    </modules>
+
+    <artifactId>Spring-Service-Api</artifactId>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.tj.springcloud.parent</groupId>
+            <artifactId>Spring-Common</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+    </dependencies>
+
+
+
+</project>
