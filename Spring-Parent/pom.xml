@@ -14,6 +14,7 @@
         <module>Spring-Eureka</module>
         <module>Spring-Common</module>
         <module>Spring-Common-db</module>
+        <module>Spring-User-Oauth</module>
 
 
     </modules>
