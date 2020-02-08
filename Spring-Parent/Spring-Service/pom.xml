@@ -14,6 +14,7 @@
     <modules>
         <module>Spring-Service-Goods</module>
         <module>Spring-Service-Order</module>
+        <module>Spring-Service-User</module>
     </modules>
 
     <dependencies>
@@ -21,6 +22,10 @@
             <groupId>org.tj.springcloud.parent</groupId>
             <artifactId>Spring-Common-Db</artifactId>
             <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
         </dependency>
     </dependencies>
 
