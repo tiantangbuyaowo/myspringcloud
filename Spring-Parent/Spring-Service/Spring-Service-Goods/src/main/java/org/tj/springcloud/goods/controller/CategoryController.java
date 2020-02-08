@@ -1,9 +1,9 @@
 package org.tj.springcloud.goods.controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.tj.springcloud.common.exception.CloudException;
-import org.tj.springcloud.common.model.common.TreeModel;
 import org.tj.springcloud.common.model.goodservice.TbCategory;
 import org.tj.springcloud.common.model.goodservice.TbCategoryTreeTableModel;
 import org.tj.springcloud.common.util.HttpResult;
@@ -18,7 +18,8 @@ import java.util.List;
  * @date 2019/3/11.
  */
 @RestController
-@RequestMapping("/category")
+@CrossOrigin
+@RequestMapping("/categoryService")
 public class CategoryController {
 
     private class TestUser {
@@ -40,14 +41,8 @@ public class CategoryController {
     @Resource
     private CategoryService categoryService;
 
-    @RequestMapping("/login")
-    public HttpResult login() {
-        return HttpResult.OK().data(new TestUser());
 
-    }
-
-
-    @RequestMapping("/list")
+    @RequestMapping("/category/list")
     public HttpResult findCategoryChildren(TbCategory tbcategory) {
 
         try {
