@@ -12,6 +12,7 @@
 
     <modules>
         <module>Spring-Service-Goods-Api</module>
+        <module>Spring-Service-User-Api</module>
     </modules>
 
     <artifactId>Spring-Service-Api</artifactId>
