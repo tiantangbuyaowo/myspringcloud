@@ -30,6 +30,18 @@ spring:
             - Path=/orderApi/**
           filters:
             - StripPrefix= 1
+        - id: oauth
+          uri: lb://user-auth
+          predicates:
+            - Path=/oauthApi/**
+          filters:
+            - StripPrefix= 1
+        - id: user
+          uri: lb://user-service
+          predicates:
+            - Path=/userApi/**
+          filters:
+            - StripPrefix= 1
   redis:
     host: 127.0.0.1
 server:
