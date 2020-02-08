@@ -8,7 +8,7 @@ import lombok.Data;
  * @date 2019/3/11.
  */
 @Data
-public class HttpResult {
+public class HttpResult<T> {
 
 
     /**
@@ -31,7 +31,7 @@ public class HttpResult {
 
     private String msg;
 
-    private Object data;
+    private T data;
 
 
     public static HttpResult OK() {
@@ -41,7 +41,7 @@ public class HttpResult {
         return result;
     }
 
-    public HttpResult data(Object data) {
+    public HttpResult data(T data) {
         this.data = data;
         return this;
     }
