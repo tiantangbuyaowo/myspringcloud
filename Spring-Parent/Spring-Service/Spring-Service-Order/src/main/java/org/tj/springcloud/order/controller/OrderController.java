@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
  * Created by tangjing on 2019/6/3.
  */
 @RestController
+@RequestMapping("/orderService")
 public class OrderController {
 
 
