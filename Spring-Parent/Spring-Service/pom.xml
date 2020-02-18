@@ -15,6 +15,7 @@
         <module>Spring-Service-Goods</module>
         <module>Spring-Service-Order</module>
         <module>Spring-Service-User</module>
+        <module>Spring-Service-SecKill</module>
     </modules>
 
     <dependencies>

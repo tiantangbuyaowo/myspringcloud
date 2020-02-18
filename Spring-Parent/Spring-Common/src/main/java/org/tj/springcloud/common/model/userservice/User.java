@@ -1,6 +1,9 @@
 package org.tj.springcloud.common.model.userservice;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
@@ -10,6 +13,9 @@ import java.util.Date;
  * @date 2019/2/28.
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class User {
     /**
      * 主键

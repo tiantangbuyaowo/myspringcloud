@@ -13,7 +13,7 @@ public class BaseExceptionHandler {
     @ExceptionHandler(value = Exception.class)
     @ResponseBody
     HttpResult<String> error(Exception e) {
-
+        e.printStackTrace();
         return HttpResult.ERROR(e.getMessage());
 
     }
