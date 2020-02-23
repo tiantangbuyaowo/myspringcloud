@@ -1,6 +1,7 @@
 package org.tj.springcloud.goods.service;
 
 import org.tj.springcloud.common.model.goodservice.Goods;
+import org.tj.springcloud.common.model.goodservice.vo.AddGoodsVo;
 import org.tj.springcloud.common.model.goodservice.vo.StockVo;
 
 /**
@@ -8,7 +9,7 @@ import org.tj.springcloud.common.model.goodservice.vo.StockVo;
  */
 public interface GoodsService {
 
-    public void addNewGood(Goods goods);
+    public void addNewGood(AddGoodsVo goods);
 
     int decreaseStock(StockVo stockVo);
 

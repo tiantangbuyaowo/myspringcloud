@@ -10,12 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.tj.springcloud.common.exception.CloudException;
 import org.tj.springcloud.common.model.goodservice.Goods;
+import org.tj.springcloud.common.model.goodservice.vo.AddGoodsVo;
 import org.tj.springcloud.common.model.goodservice.vo.StockVo;
 import org.tj.springcloud.common.util.HttpResult;
 import org.tj.springcloud.goods.service.BrandService;
 import org.tj.springcloud.goods.service.GoodsService;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 
 /**
  * @author tangjing
@@ -61,9 +63,10 @@ public class GoodsController {
 
 
     @PostMapping("/good")
-    public HttpResult addNewGood(@RequestBody Goods goods) {
+    public HttpResult addNewGood(
+            @Valid @RequestBody AddGoodsVo addGoodsVo) {
         try {
-            goodsService.addNewGood(goods);
+            goodsService.addNewGood(addGoodsVo);
             return HttpResult.OK();
         } catch (Exception e) {
             e.printStackTrace();
@@ -77,16 +80,8 @@ public class GoodsController {
 
     @GetMapping("/good/{id}")
     public Goods findGoodInfo(@PathVariable("id") String id) {
-        try {
+        return goodsService.findGoodsById(id);
 
-            return goodsService.findGoodsById(id);
-        } catch (Exception e) {
-            e.printStackTrace();
-            if (e instanceof CloudException) {
-                return null;
-            }
-            return null;
-        }
     }
 
 
