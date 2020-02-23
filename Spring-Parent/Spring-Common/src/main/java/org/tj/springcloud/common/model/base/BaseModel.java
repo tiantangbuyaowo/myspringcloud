@@ -1,5 +1,7 @@
 package org.tj.springcloud.common.model.base;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 /**
@@ -18,5 +20,6 @@ public class BaseModel {
      * @创建日期 2019/3/11
      * @创建时间 22:04
      */
+    @TableId(type = IdType.UUID)
     protected String id;
 }

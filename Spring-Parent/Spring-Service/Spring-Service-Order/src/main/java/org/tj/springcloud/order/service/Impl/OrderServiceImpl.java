@@ -59,7 +59,7 @@ public class OrderServiceImpl implements OrderService {
                     //生成订单明细
                     OrderItem item = new OrderItem();
                     item.setId( idWorker.nextId() + "" );
-                    item.setGooddesc( goods.getDesc() );
+                    item.setGooddesc( goods.getGoodsDesc() );
                     item.setGoodtitle( goods.getTitle() );
                     item.setGoodid( goods.getId() );
                     item.setOrderid( order.getId() );
@@ -68,7 +68,7 @@ public class OrderServiceImpl implements OrderService {
 
                     orderItemMapper.addNewOrderItems( items );
                    // int i = 1 / 0;
-                    orderMapper.addNewOrder( order );
+                    orderMapper.insert( order );
 
 
                 }

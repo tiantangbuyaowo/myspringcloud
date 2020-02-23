@@ -1,5 +1,6 @@
 package org.tj.springcloud.common.model.goodservice;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.tj.springcloud.common.model.base.BaseModel;
@@ -10,6 +11,7 @@ import org.tj.springcloud.common.model.base.BaseModel;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
+@TableName(value = "tb_goods")
 public class Goods extends BaseModel {
 
     /**
@@ -20,7 +22,8 @@ public class Goods extends BaseModel {
     /**
      * 描述
      */
-    private String desc;
+
+    private String goodsDesc;
 
     /**
      * 库存

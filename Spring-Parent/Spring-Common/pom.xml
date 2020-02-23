@@ -13,10 +13,10 @@
     <artifactId>Spring-Common</artifactId>
 
     <dependencies>
-       <!-- <dependency>
-            <groupId>org.apache.tomcat.embed</groupId>
-            <artifactId>tomcat-embed-core</artifactId>
-        </dependency>-->
+        <!-- <dependency>
+             <groupId>org.apache.tomcat.embed</groupId>
+             <artifactId>tomcat-embed-core</artifactId>
+         </dependency>-->
         <!-- 引入 redis 依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -65,6 +65,12 @@
         </dependency>
 
 
+        <!-- mybatisPlus 核心库 -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.1.0</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
         <dependency>
             <groupId>com.alibaba</groupId>

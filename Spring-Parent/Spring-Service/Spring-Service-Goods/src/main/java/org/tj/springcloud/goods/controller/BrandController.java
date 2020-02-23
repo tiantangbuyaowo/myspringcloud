@@ -1,7 +1,11 @@
 package org.tj.springcloud.goods.controller;
 
-import com.github.pagehelper.PageInfo;
+
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import jdk.nashorn.internal.objects.annotations.Getter;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,10 +39,10 @@ public class BrandController {
      * @创建日期 2019/3/21
      * @创建时间 20:49
      */
-    @RequestMapping("/brand/list")
-    public HttpResult list(@RequestBody(required = false) TbBrandPage page) {
+    @GetMapping("/brand/list")
+    public HttpResult list(TbBrandPage page) {
         try {
-            PageInfo<TbBrand> pageInfo = brandService.findBrandListForPage(page);
+            Page<TbBrand> pageInfo = brandService.findBrandListForPage(page);
             return HttpResult.OK().data(pageInfo);
         } catch (Exception e) {
             e.printStackTrace();
@@ -47,6 +51,7 @@ public class BrandController {
             }
             return HttpResult.ERROR(e.getMessage());
         }
+        // return null;
     }
 
 
@@ -72,6 +77,31 @@ public class BrandController {
         }
 
         return HttpResult.OK();
+    }
+
+    /**
+     * @描述
+     * @参数 根据id获取商品分类
+     * @返回值
+     * @创建人 tangjing
+     * @创建日期 2019/4/3
+     * @创建时间 22:33
+     */
+    @GetMapping("/brand/{id}")
+    public HttpResult brand(@PathVariable String id) {
+        //System.out.printf(tbBrand.getName() + tbBrand.getLetter());
+        TbBrand brand = null;
+        try {
+            brand = brandService.findBrandById(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (e instanceof CloudException) {
+                return HttpResult.ERROR(e.getMessage());
+            }
+            return HttpResult.ERROR(e.getMessage());
+        }
+
+        return HttpResult.OK().data(brand);
     }
 
 }

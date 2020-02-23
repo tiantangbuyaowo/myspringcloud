@@ -10,29 +10,4 @@
         `TIME` as `time` ,
         USERID as userid
     </sql>
-
-    <!-- 插入记录 -->
-    <insert id="addNewOrder" parameterType="Order">
-        INSERT INTO tb_order(
-        ID
-
-        <if test="time != null  ">
-            ,TIME
-        </if>
-        <if test="userid != null  and userid != '' ">
-            ,USERID
-        </if>
-        )VALUES(
-        #{id}
-
-        <if test="time != null  ">
-            ,#{time}
-        </if>
-        <if test="userid != null  and userid != '' ">
-            ,#{userid}
-        </if>
-        )
-    </insert>
-
-
 </mapper>

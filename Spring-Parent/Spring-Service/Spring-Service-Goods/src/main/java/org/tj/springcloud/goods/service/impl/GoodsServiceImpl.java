@@ -29,7 +29,7 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public void addNewGood(Goods goods) {
         goods.setId(idWorker.nextId()+"");
-        goodsMapper.addNewGood(goods);
+        goodsMapper.insert(goods);
     }
 
     //@TxcTransaction(propagation = DTXPropagation.SUPPORTS)
@@ -42,6 +42,6 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public Goods findGoodsById(String id) {
-        return goodsMapper.findGoodsById(id);
+        return goodsMapper.selectById(id);
     }
 }

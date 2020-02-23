@@ -4,54 +4,5 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.tj.springcloud.goods.mapper.TbBrandMapper">
 
-    <sql id="Base_Data_Select">
-		ID as id ,
-				NAME as name ,
-				IMAGE as image ,
-				LETTER as letter
-	</sql>
 
-    <!-- 查询列表 -->
-    <select id="findBrandListForPage" resultType="TbBrand"
-            parameterType="TbBrandPage">
-        SELECT
-        <include refid="Base_Data_Select"/>
-        FROM tb_brand WHERE 1 = 1
-        <if test="null != name and '' != name">
-            AND NAME LIKE CONCAT('%',#{name},'%')
-        </if>
-        ORDER BY ID
-
-    </select>
-
-    <!--添加新的商品分类 -->
-    <insert id="addNewTbrand" parameterType="TbBrand">
-        INSERT INTO tb_brand(
-        ID
-        <if test="name != null  and name != '' ">
-            ,NAME
-        </if>
-        <if test="image != null  and image != '' ">
-            ,IMAGE
-        </if>
-        <if test="letter != null  and letter != '' ">
-            ,LETTER
-        </if>
-        )VALUES(
-
-        #{id}
-
-        <if test="name != null  and name != '' ">
-            ,#{name}
-        </if>
-        <if test="image != null  and image != '' ">
-            ,#{image}
-        </if>
-        <if test="letter != null  and letter != '' ">
-            ,#{letter}
-        </if>
-        )
-
-    </insert>
-
-</mapper>   
+</mapper>

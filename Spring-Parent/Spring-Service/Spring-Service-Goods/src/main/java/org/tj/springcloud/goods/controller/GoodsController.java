@@ -44,7 +44,7 @@ public class GoodsController {
      * @创建日期 2019/3/21
      * @创建时间 20:49
      */
-    @RequestMapping("/good/list")
+    @GetMapping("/good/list")
     public HttpResult list() {
         try {
             // TimeUnit.MILLISECONDS.sleep( 3000 );
@@ -90,7 +90,7 @@ public class GoodsController {
     }
 
 
-    @RequestMapping("/good/stock/decrease")
+    @PostMapping("/good/stock/decrease")
     public HttpResult reduceStock(@RequestBody StockVo stockVo) {
         try {
             int count = goodsService.decreaseStock(stockVo);

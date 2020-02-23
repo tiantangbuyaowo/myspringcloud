@@ -22,7 +22,7 @@ public interface GoodsApi {
      *
      * @param stockVo
      */
-    @PostMapping("stock/decrease")
+    @PostMapping("/goodsService/good/stock/decrease")
     HttpResult decreaseStock(@RequestBody StockVo stockVo);
 
 
@@ -31,6 +31,6 @@ public interface GoodsApi {
      *
      * @param id
      */
-    @GetMapping("good/{id}")
+    @GetMapping("/goodsService/good/{id}")
     Goods findGoodInfo(@PathVariable("id") String id);
 }

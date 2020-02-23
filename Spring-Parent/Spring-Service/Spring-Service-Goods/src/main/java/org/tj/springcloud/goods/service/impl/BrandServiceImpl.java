@@ -1,8 +1,9 @@
 package org.tj.springcloud.goods.service.impl;
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 import org.tj.springcloud.common.model.goodservice.TbBrand;
 import org.tj.springcloud.common.model.goodservice.searchpage.TbBrandPage;
@@ -11,7 +12,6 @@ import org.tj.springcloud.goods.mapper.TbBrandMapper;
 import org.tj.springcloud.goods.service.BrandService;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * @author tangjing
@@ -37,18 +37,25 @@ public class BrandServiceImpl implements BrandService {
     @Resource
     private IdWorker idWorker;
 
+
     @Override
-    public PageInfo<TbBrand> findBrandListForPage(TbBrandPage page) {
-
-        if (null == page){
-            page = new TbBrandPage();
+    public Page<TbBrand> findBrandListForPage(TbBrandPage tbpage) {
+        if (null == tbpage) {
+            tbpage = new TbBrandPage();
         }
-        PageHelper.startPage(page.getPageCurrent(), page.getPageSize());
+        QueryWrapper<TbBrand> wrapper = new QueryWrapper();
+        if (!StringUtils.isEmpty(tbpage.getName())) {
+            wrapper.like("NAME", tbpage.getName());
+        }
 
-        List<TbBrand> list = tbBrandMapper.findBrandListForPage(page);
-        PageInfo<TbBrand> pageInfo = new PageInfo<TbBrand>(list);
-        return pageInfo;
+        Page<TbBrand> page = new Page<TbBrand>(tbpage.getCurrent(), tbpage.getSize());
+
+
+        tbBrandMapper.selectPage(page, wrapper);
+
+        return page;
     }
+
 
     /**
      * @描述
@@ -60,7 +67,16 @@ public class BrandServiceImpl implements BrandService {
      */
     @Override
     public void addNewTbrand(TbBrand tbBrand) {
+        /*tbBrand.setId(idWorker.nextId() + "");
+        tbBrandMapper.addNewTbrand(tbBrand);*/
         tbBrand.setId(idWorker.nextId() + "");
-        tbBrandMapper.addNewTbrand(tbBrand);
+        tbBrandMapper.insert(tbBrand);
+
+    }
+
+
+    @Override
+    public TbBrand findBrandById(String id) {
+        return tbBrandMapper.selectById(id);
     }
 }

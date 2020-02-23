@@ -1,12 +1,17 @@
 package org.tj.springcloud.common.model.orderservice;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.tj.springcloud.common.model.base.BaseModel;
 
 /**
  * Created by tangjing on 2019/6/12.
  */
-@Data
+@Getter
+@Setter
+@TableName("tb_order_items")
 public class OrderItem extends BaseModel {
 
     /**
