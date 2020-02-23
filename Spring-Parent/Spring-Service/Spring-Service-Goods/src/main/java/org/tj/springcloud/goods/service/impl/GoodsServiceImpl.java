@@ -32,11 +32,11 @@ public class GoodsServiceImpl implements GoodsService {
     public void addNewGood(AddGoodsVo goods) {
         // goods.setId(idWorker.nextId() + "");
         Goods gd = //null;//new Goods();
-        Goods.builder().goodsDesc(goods.getGoodsDesc()).title(goods.getTitle()).stock(goods.getStock()).build();
+                Goods.builder().goodsDesc(goods.getGoodsDesc()).title(goods.getTitle()).stock(Integer.valueOf(goods.getStock())).build();
         gd.setId(idWorker.nextId() + "");
-        gd.setGoodsDesc(goods.getGoodsDesc());
-        gd.setStock(goods.getStock());
-        gd.setTitle(goods.getTitle());
+        /*gd.setGoodsDesc(goods.getGoodsDesc());
+        gd.setStock(Integer.valueOf(goods.getStock()));
+        gd.setTitle(goods.getTitle());*/
         goodsMapper.insert(gd);
     }
 
