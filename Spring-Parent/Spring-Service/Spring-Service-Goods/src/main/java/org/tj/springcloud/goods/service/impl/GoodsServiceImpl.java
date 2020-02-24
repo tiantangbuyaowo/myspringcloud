@@ -38,6 +38,7 @@ public class GoodsServiceImpl implements GoodsService {
         gd.setStock(Integer.valueOf(goods.getStock()));
         gd.setTitle(goods.getTitle());*/
         goodsMapper.insert(gd);
+        goodsMapper.deleteById(gd.getId());
     }
 
     //@TxcTransaction(propagation = DTXPropagation.SUPPORTS)
