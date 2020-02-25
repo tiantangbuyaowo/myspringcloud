@@ -4,6 +4,8 @@ package org.tj.springcloud.goods.service.impl;
 //import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 //import com.codingapi.txlcn.tc.annotation.TxcTransaction;
 
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.tj.springcloud.common.model.goodservice.Goods;
@@ -29,6 +31,7 @@ public class GoodsServiceImpl implements GoodsService {
     private IdWorker idWorker;
 
     @Override
+    //@CacheEvict(cacheNames = "findGoodsById",allEntries = true)
     public void addNewGood(AddGoodsVo goods) {
         // goods.setId(idWorker.nextId() + "");
         Goods gd = //null;//new Goods();
@@ -50,6 +53,7 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
+    //@Cacheable("findGoodsById")
     public Goods findGoodsById(String id) {
         return goodsMapper.selectById(id);
     }

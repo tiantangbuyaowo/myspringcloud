@@ -1,5 +1,6 @@
 package org.tj.springcloud.goods.service.impl;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.tj.springcloud.common.model.common.TreeModel;
 import org.tj.springcloud.common.model.goodservice.TbCategory;
@@ -30,6 +31,7 @@ public class CategoryServiceImpl implements CategoryService {
     private CategoryMapper gategoryMapper;
 
     @Override
+    //@Cacheable("tbTree")
     public List<TbCategoryTreeTableModel> findCategoryTreeTable() {
         return gategoryMapper.findCategoryTreeTable();
     }
