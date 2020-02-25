@@ -98,12 +98,12 @@
             </dependency>
 
 
-            <!-- 分页助手启动器 -->
+        <!--    &lt;!&ndash; 分页助手启动器 &ndash;&gt;
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>${pageHelper.starter.version}</version>
-            </dependency>
+            </dependency>-->
 
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
