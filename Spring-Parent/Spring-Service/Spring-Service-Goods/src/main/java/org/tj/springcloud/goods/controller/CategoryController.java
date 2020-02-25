@@ -1,6 +1,7 @@
 package org.tj.springcloud.goods.controller;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.tj.springcloud.common.exception.CloudException;
@@ -42,7 +43,8 @@ public class CategoryController {
     private CategoryService categoryService;
 
 
-    @RequestMapping("/category/list")
+    
+    @GetMapping("/category/list")
     public HttpResult findCategoryChildren(TbCategory tbcategory) {
 
         try {

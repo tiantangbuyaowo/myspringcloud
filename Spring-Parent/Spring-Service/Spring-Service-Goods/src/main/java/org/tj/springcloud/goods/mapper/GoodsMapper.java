@@ -4,8 +4,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.tj.springcloud.common.model.goodservice.Goods;
 import org.tj.springcloud.common.model.goodservice.vo.StockVo;
 
-import java.util.List;
-
 /**
  * @author tangjing
  * @desc
