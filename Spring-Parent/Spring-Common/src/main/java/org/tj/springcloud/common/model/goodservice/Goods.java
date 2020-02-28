@@ -12,6 +12,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.tj.springcloud.common.model.base.BaseModel;
 
+import java.io.Serializable;
+
 /**
  * 商品对象
  * Created by tangjing on 2019/5/30.
@@ -22,7 +24,7 @@ import org.tj.springcloud.common.model.base.BaseModel;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Goods extends BaseModel {
+public class Goods extends BaseModel implements Serializable {
 
     /**
      * 标题
