@@ -1,3 +1,4 @@
+/*
 package org.tj.springcloud.order.client.back;
 
 import com.netflix.ribbon.proxy.annotation.Http;
@@ -13,9 +14,11 @@ import org.tj.springcloud.order.client.GoodsClient;
 
 import java.util.List;
 
+*/
 /**
  * Created by tangjing on 2019/6/4.
- */
+ *//*
+
 @Slf4j
 @Component
 public class GoodsServiceFallback implements GoodsClient {
@@ -31,4 +34,10 @@ public class GoodsServiceFallback implements GoodsClient {
 
         return new Goods();
     }
+
+    @Override
+    public HttpResult list() {
+        return null;
+    }
 }
+*/
