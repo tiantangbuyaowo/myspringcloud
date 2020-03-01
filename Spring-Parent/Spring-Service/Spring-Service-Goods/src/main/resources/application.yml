@@ -24,19 +24,19 @@ spring:
       # 数据库连接超时时间,默认30秒，即30000
       connection-timeout: 30000
       connection-test-query: SELECT 1
-# cache:
-#   type: redis
-# redis:
-#   database: 0
-#   host: localhost
-#   port: 6379
-#   jedis:
-#     pool:
-#       max-active: 500
-#       max-idle:  1000
-#       max-wait: 6000ms
-#       min-idle: 4
-#   password: jbnshx20190909
+#  cache:
+#    type: redis
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    jedis:
+      pool:
+        max-active: 500
+        max-idle:  1000
+        max-wait: 6000ms
+        min-idle: 4
+    password: jbnshx20190909
 server:
   port: 2001
   http2:

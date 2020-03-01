@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.tj.springcloud.common.model.goodservice.Goods;
+import org.tj.springcloud.common.model.goodservice.TbSku;
 import org.tj.springcloud.common.model.goodservice.vo.StockVo;
 import org.tj.springcloud.common.util.HttpResult;
 
@@ -33,4 +34,10 @@ public interface GoodsApi {
      */
     @GetMapping("/goodsService/good/{id}")
     Goods findGoodInfo(@PathVariable("id") String id);
+
+    /**
+     * 获取sku列表
+     */
+    @GetMapping("/skuService/sku/list")
+    public HttpResult<List<TbSku>> skuList();
 }
