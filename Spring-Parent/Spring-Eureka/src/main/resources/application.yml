@@ -1,5 +1,5 @@
 server:
-  port: 1001
+  port: 2001
   http2:
     enabled: true
     undertow:
@@ -14,6 +14,6 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:1001/eureka
+      defaultZone: http://127.0.0.1:2001/eureka
     fetch-registry: false
     register-with-eureka: false
