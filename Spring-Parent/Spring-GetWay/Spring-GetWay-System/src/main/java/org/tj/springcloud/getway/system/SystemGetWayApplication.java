@@ -19,11 +19,6 @@ public class SystemGetWayApplication {
 
     @Bean
     public KeyResolver ipKeyResolver() {
-        return new KeyResolver() {
-            @Override
-            public Mono<String> resolve(ServerWebExchange exchange) {
-                return Mono.just(exchange.getRequest().getRemoteAddress().getHostName());
-            }
-        };
+        return exchange -> Mono.just(exchange.getRequest().getRemoteAddress().getHostName());
     }
 }
