@@ -13,7 +13,7 @@
         <module>Spring-GetWay</module>
         <module>Spring-Eureka</module>
         <module>Spring-Common</module>
-        <module>Spring-Common-db</module>
+        <module>Spring-Common-Db</module>
         <module>Spring-User-Oauth</module>
 
 
