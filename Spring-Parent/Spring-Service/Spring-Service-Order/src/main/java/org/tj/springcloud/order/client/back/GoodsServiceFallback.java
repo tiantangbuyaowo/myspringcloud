@@ -6,9 +6,14 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.tj.springcloud.common.model.goodservice.Goods;
+import org.tj.springcloud.common.model.goodservice.TbSku;
 import org.tj.springcloud.common.model.goodservice.vo.StockVo;
 import org.tj.springcloud.common.util.HttpResult;
+import org.tj.springcloud.goods.api.GoodsApi;
 import org.tj.springcloud.goods.api.GoodsApiAdapter;
+import org.tj.springcloud.order.client.GoodsClient;
+
+import java.util.List;
 
 
 /**
@@ -17,9 +22,7 @@ import org.tj.springcloud.goods.api.GoodsApiAdapter;
 
 @Slf4j
 @Component
-public class GoodsServiceFallback extends GoodsApiAdapter {
-
-
+public class GoodsServiceFallback extends GoodsApiAdapter implements GoodsClient {
     @Override
     public HttpResult decreaseStock(@RequestBody StockVo stockVo) {
 
