@@ -2,7 +2,7 @@ spring:
   application:
     name: goods-service
   datasource:
-    url: jdbc:mysql://localhost:3306/shop_goods
+    url: jdbc:mysql://localhost:3306/shop_goods?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true&serverTimezone=UTC
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 123456
