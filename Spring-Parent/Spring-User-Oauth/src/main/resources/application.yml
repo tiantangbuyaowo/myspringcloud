@@ -46,3 +46,6 @@ encrypt:
     secret: changgou
     alias: changgou
     password: changgou
+feign:
+  hystrix:
+    enabled: true
