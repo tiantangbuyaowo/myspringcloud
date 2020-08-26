@@ -5,7 +5,7 @@ spring:
     url: jdbc:mysql://localhost:3306/shop_user
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password: 123
+    password: 123456
     # Hikari 连接池配置
     # 最小空闲连接数量
     type: com.zaxxer.hikari.HikariDataSource
@@ -39,8 +39,8 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:1001/eureka
-mybatis:
+      defaultZone: http://localhost:2001/eureka
+mybatis-plus:
   type-aliases-package: org.tj.springcloud.common.model
   mapper-locations: mappers/*.xml
 shop:
