@@ -1649,7 +1649,7 @@ DROP TABLE IF EXISTS `tb_goods`;
 CREATE TABLE `tb_goods` (
   `id` varchar(255) NOT NULL,
   `title` varchar(255) DEFAULT NULL,
-  `desc` text,
+  `goods_desc` text,
   `stock` int(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
