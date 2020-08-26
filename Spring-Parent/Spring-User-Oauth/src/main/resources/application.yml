@@ -1,5 +1,5 @@
 server:
-  port: 4001
+  port: 5001
   http2:
     enabled: true
     undertow:
@@ -23,7 +23,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/shop_user?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true&serverTimezone=UTC
     username: root
-    password: 123
+    password: 123456
   main:
     allow-bean-definition-overriding: true
   thymeleaf:
