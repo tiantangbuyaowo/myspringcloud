@@ -33,7 +33,7 @@
         <spring-cloud.version>Finchley.SR1</spring-cloud.version>
         <eureka-server.version>2.0.1.RELEASE</eureka-server.version>
         <starter-web.version>2.0.1.RELEASE</starter-web.version>
-        <spring.version>5.2.4.RELEASE</spring.version>
+        <spring.version>6.0.0</spring.version>
         <springboot.version>2.0.4.RELEASE</springboot.version>
         <mysql.conntctor.version>5.1.42</mysql.conntctor.version>
         <mybatis.spring.boot.version>2.0.0</mybatis.spring.boot.version>
